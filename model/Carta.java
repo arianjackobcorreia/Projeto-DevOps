@@ -27,7 +27,7 @@ public class Carta {
         System.out.println("╠══════════════════════════════════════╣");
 
         for (String linha : mensagem.split("\n")) {
-            System.out.printf("║ %-36s ║%n", linha);
+            System.out.printf("║ %-40s ║%n", linha);
         }
 
         System.out.println("╠══════════════════════════════════════╣");
