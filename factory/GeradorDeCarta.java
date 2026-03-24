@@ -1,0 +1,95 @@
+package factory;
+
+import model.Carta;
+
+public class GeradorDeCarta {
+
+    public static Carta criarCarta(int tipo, String nome) {
+
+        switch (tipo) {
+
+            case 1:
+                return new Carta(
+                        "*-- Financeiro --*",
+                        nome,
+                        "Seu saldo está equilibrado.\nContinue firme.",
+                        "Sistema Financeiro 💰"
+                );
+
+            case 2:
+                return new Carta(
+                        "--* Amor *--",
+                        nome,
+                        "No meio do caos,\nfoi você quem fez sentido.",
+                        "❤️"
+                );
+
+            case 3:
+                return new Carta(
+                        "**Motivação**",
+                        nome,
+                        "Você já sobreviveu a dias piores.\nContinua!",
+                        "Seu eu do futuro 🚀"
+                );
+
+            case 4:
+                return new Carta(
+                        "Desculpas",
+                        nome,
+                        "Eu errei.\nMas estou tentando ser melhor.",
+                        "Com sinceridade"
+                );
+
+            case 5:
+                return new Carta(
+                        "Parabéns!",
+                        nome,
+                        "Você conseguiu.\nE isso é só o começo.",
+                        "🎉"
+                );
+
+            case 6:
+                return new Carta(
+                        "Aviso!",
+                        nome,
+                        "Algo precisa da sua atenção.\nFique alerta.",
+                        "⚠️ Sistema"
+                );
+
+            case 7:
+                return new Carta(
+                        "Reflexão",
+                        nome,
+                        "Nem tudo precisa ser entendido agora.\nSó sentido.",
+                        "🧠"
+                );
+
+            case 8:
+                return new Carta(
+                        "Motivação Hardcore",
+                        nome,
+                        "Ninguém vai fazer por você.\nLevanta e faz.",
+                        "🔥"
+                );
+
+            case 9:
+                return new Carta(
+                        "Despedida",
+                        nome,
+                        "Alguns ciclos acabam.\nE tudo bem.",
+                        "👋"
+                );
+
+            case 10:
+                return new Carta(
+                        "Poética",
+                        nome,
+                        "Você é verso solto\nnum mundo de linhas retas.",
+                        "🌙"
+                );
+
+            default:
+                throw new IllegalArgumentException("Tipo inválido");
+        }
+    }
+}
