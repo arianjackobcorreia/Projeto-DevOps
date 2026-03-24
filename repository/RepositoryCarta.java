@@ -15,7 +15,7 @@ public class RepositoryCarta {
             writer.write("Titulo: " + carta.getTitulo() + "\n");
             writer.write("Para: " + carta.getDestinatario() + "\n");
             writer.write(carta.getMensagem() + "\n");
-            writer.write("Rodape: " + carta.getRodape() + "\n");
+            writer.write(carta.getRodape() + "\n");
             writer.write("-------------------------\n");
 
         } catch (IOException e) {
