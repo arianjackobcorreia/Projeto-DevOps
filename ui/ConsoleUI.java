@@ -1,8 +1,11 @@
 package ui;
 
+import factory.GeradorDeCarta;
 import model.Carta;
+import model.TiposCarta;
 import service.CartaService;
 import repository.RepositoryCarta;
+import util.Cores;
 
 import java.util.*;
 
@@ -16,7 +19,8 @@ public class ConsoleUI {
 
     public void iniciar() {
 
-        System.out.print("Digite seu nome: ");
+        System.out.println("===== CADASTRO =====");
+        System.out.print("Digite seu nome (remetente): ");
         String nome = sc.nextLine();
 
         int opcao;
@@ -62,32 +66,81 @@ public class ConsoleUI {
         } while (opcao != 0);
     }
 
-    private void gerarCarta(String nome) {
+    private int totalCartas = 0;
 
-        System.out.println("\u001B[32mGerando sua carta...\u001B[0m\n");
+    private void gerarCarta(String remetente) {
 
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(i + " - Tipo " + i);
+        if (totalCartas >= 15) {
+            System.out.println("Limite de cartas atingido!");
+            return;
         }
 
-        System.out.print("Escolha: ");
-        int tipo = sc.nextInt();
+        System.out.print("Deseja alterar o destinatário? (s/n): ");
+        String escolha = sc.nextLine();
+
+        String destinatario = remetente;
+
+        if (escolha.equalsIgnoreCase("s")) {
+            System.out.print("Novo destinatário: ");
+            destinatario = sc.nextLine();
+        }
+
+        System.out.println("\nEscolha o tipo:");
+        for (TiposCarta t : TiposCarta.values()) {
+            System.out.println(t.getCodigo() + " - " + t.getDescricao());
+        }
+
+        int tipoInput = sc.nextInt();
         sc.nextLine();
 
-        Carta carta = service.gerarCarta(tipo, nome);
+        TiposCarta tipo = TiposCarta.fromCodigo(tipoInput);
+
+        if (tipo == null) {
+            System.out.println("Tipo inválido!");
+            return;
+        }
+
+        System.out.println("Escolha a cor:");
+        System.out.println("1 - Azul\n2 - Verde\n3 - Vermelho\n4 - Amarelo");
+
+        int corInput = sc.nextInt();
+        sc.nextLine();
+
+        String cor = util.Cores.RESET;
+
+        switch (corInput) {
+            case 1: cor = util.Cores.AZUL; break;
+            case 2: cor = util.Cores.VERDE; break;
+            case 3: cor = util.Cores.VERMELHO; break;
+            case 4: cor = Cores.AMARELO; break;
+        }
+
+        System.out.print("Deseja cancelar? (s/n): ");
+        if (sc.nextLine().equalsIgnoreCase("s")) {
+            System.out.println("Operação cancelada.");
+            return;
+        }
+
+        System.out.println("Gerando sua carta...\n");
+
+        Carta carta = service.gerarCarta(tipo, remetente, destinatario, cor);
 
         carta.exibir();
-
         historico.add(carta);
         repo.salvar(carta);
+
+        totalCartas++;
     }
 
-    private void criarCarta(String nome) {
+    private void criarCarta(String remetente) {
 
         System.out.println("\nCriando nova carta...\n");
 
         System.out.print("Título: ");
         String titulo = sc.nextLine();
+
+        System.out.print("Destinatário:");
+        String destinatario = sc.nextLine();
 
         System.out.print("Mensagem: ");
         String mensagem = sc.nextLine();
@@ -95,7 +148,16 @@ public class ConsoleUI {
         System.out.print("Rodapé: ");
         String rodape = sc.nextLine();
 
-        Carta carta = new Carta(titulo, nome, mensagem, rodape);
+        String cor = Cores.RESET;
+
+        Carta carta = new Carta(
+                titulo,
+                remetente,
+                destinatario,
+                mensagem,
+                rodape,
+                cor
+        );
 
         carta.exibir();
 

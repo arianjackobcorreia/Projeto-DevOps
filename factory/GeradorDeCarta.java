@@ -1,65 +1,78 @@
 package factory;
 
-import model.Carta;
+import model.*;
 
 public class GeradorDeCarta {
 
-    public static Carta criarCarta(int tipo, String nome) {
+    public static Carta criarCarta(TiposCarta tipo, String remetente, String destinatario, String cor) {
 
         switch (tipo) {
 
-            case 1:
-                return new Carta("** Financeiro **", nome,
+            case FINANCEIRO:
+                return new Carta("** Financeiro **", remetente,
+                        destinatario,
                         "Seu saldo está sob controle.\nContinue assim.",
-                        "💰 Sistema Financeiro.");
+                        "💰 Sistema Financeiro.", cor);
 
-            case 2:
-                return new Carta("--* Amor *--", nome,
+            case AMOR:
+                return new Carta("--* Amor *--", remetente,
+                        destinatario,
                         "No meio do caos,\nfoi você quem fez sentido.",
-                        "❤️");
+                        "❤️", cor);
 
-            case 3:
-                return new Carta("*-- Motivação --*", nome,
-                        "Você já sobreviveu a dias piores.\nContinua.",
-                        "🚀");
+            case MOTIVACAO:
+                return new Carta("*-- Motivação --*", remetente,
+                        destinatario,
+                        "Você já sobreviveu a dias piores.\nContinua!",
+                        "🚀", cor);
 
-            case 4:
-                return new Carta("Desculpas!", nome,
+            case DESCULPAS:
+                return new Carta("Desculpas!", remetente,
+                        destinatario,
                         "Eu errei.\nMas estou tentando melhorar.",
-                        "Com sinceridade. Irei te provar!");
+                        "Com sinceridade. Irei te provar!", cor);
 
-            case 5:
-                return new Carta("Parabéns!", nome,
+            case PARABENS:
+                return new Carta("Parabéns!", remetente,
+                        destinatario,
                         "Você conseguiu.\nE isso é só o começo.",
-                        "🎉");
+                        "🎉", cor);
 
-            case 6:
-                return new Carta("Aviso!", nome,
+            case AVISO:
+                return new Carta("Aviso!", remetente,
+                        destinatario,
                         "Algo precisa da sua atenção.\nFique alerta.",
-                        "⚠️");
+                        "⚠️", cor);
 
-            case 7:
-                return new Carta("* Reflexão *", nome,
+            case REFLEXAO:
+                return new Carta("* Reflexão... *", remetente,
+                        destinatario,
                         "Nem tudo precisa ser entendido agora.\nSó sentido.",
-                        "🧠");
+                        "🧠", cor);
 
-            case 8:
-                return new Carta("Hardcore", nome,
+            case PERSEVERANCA:
+                return new Carta("Perseverança", remetente,
+                        destinatario,
                         "Ninguém vai fazer por você.\nLevanta e faz.",
-                        "🔥");
+                        "🔥", cor);
 
-            case 9:
-                return new Carta("Despedida", nome,
+            case DESPEDIDA:
+                return new Carta("Despedida", remetente,
+                        destinatario,
                         "Alguns ciclos acabam.\nE tudo bem.",
-                        "Tchau! 👋");
+                        "Adeus! 👋", cor);
 
-            case 10:
-                return new Carta("Poética", nome,
+            case POETICA:
+                return new Carta("Poética", remetente,
+                        destinatario,
                         "Você é verso solto\nnum mundo de linhas retas.",
-                        "🌙");
+                        "🌙", cor);
 
             default:
-                throw new IllegalArgumentException("Tipo inválido");
+                return new
+                        Carta("Padrão", remetente, destinatario,
+                        "Mensagem Padrão.",
+                        "...", cor);
         }
     }
 }

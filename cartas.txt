@@ -31,3 +31,16 @@ Para: Leon S. Kennedy
 Você conhece essa pessoa,/npor isso a urgência!
 Se cuida!
 -------------------------
+==== CARTA ====
+Titulo: Aviso!
+Para: Ricardo
+Algo precisa da sua atenção.
+Fique alerta.
+⚠️
+-------------------------
+==== CARTA ====
+Titulo: Início
+Para: Alice
+Acho que deu certo!
+Te encontro daqui à dois minutos
+-------------------------
