@@ -25,7 +25,7 @@ public class ConsoleUI {
         int opcao;
 
         do {
-            System.out.println("\n===== MENU =====");
+            System.out.println("\n=====** MENU **=====");
             System.out.println("1 - Gerar carta");
             System.out.println("2 - Criar carta personalizada");
             System.out.println("3 - Ver histórico (memória)");
