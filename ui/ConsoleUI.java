@@ -1,6 +1,5 @@
 package ui;
 
-import factory.GeradorDeCarta;
 import model.Carta;
 import model.TiposCarta;
 import service.CartaService;
@@ -100,7 +99,7 @@ public class ConsoleUI {
             return;
         }
 
-        System.out.println("Escolha a cor:");
+        System.out.println("Escolha uma cor:");
         System.out.println("1 - Azul\n2 - Verde\n3 - Vermelho\n4 - Amarelo");
 
         int corInput = sc.nextInt();
