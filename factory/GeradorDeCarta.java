@@ -9,7 +9,7 @@ public class GeradorDeCarta {
         switch (tipo) {
 
             case FINANCEIRO:
-                return new Carta("** Financeiro **", remetente,
+                return new Carta("*-* Financeiro *-*", remetente,
                         destinatario,
                         "Seu saldo está sob controle.\nContinue assim.",
                         "💰 Sistema Financeiro.", cor);
