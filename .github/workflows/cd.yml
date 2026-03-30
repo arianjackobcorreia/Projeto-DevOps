@@ -27,7 +27,7 @@ jobs:
         run: jar cfe cartas-app.jar Main $(find . -name "*.class")
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cartas-app
           path: cartas-app.jar
