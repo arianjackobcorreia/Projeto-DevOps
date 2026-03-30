@@ -27,7 +27,7 @@ public class RepositoryCarta {
         try (BufferedReader reader = new BufferedReader(new FileReader(ARQUIVO))) {
 
             String linha;
-            System.out.println("\n===== HISTÓRICO =====");
+            System.out.println("\n=====* HISTÓRICO *=====");
 
             while ((linha = reader.readLine()) != null) {
                 System.out.println(linha);
