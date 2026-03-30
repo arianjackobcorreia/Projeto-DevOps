@@ -11,7 +11,7 @@ public class RepositoryCarta {
     public void salvar(Carta carta) {
         try (FileWriter writer = new FileWriter(ARQUIVO, true)) {
 
-            writer.write("==== CARTA ====\n");
+            writer.write("====* CARTA *====\n");
             writer.write("Titulo: " + carta.getTitulo() + "\n");
             writer.write("Para: " + carta.getDestinatario() + "\n");
             writer.write(carta.getMensagem() + "\n");
@@ -27,7 +27,7 @@ public class RepositoryCarta {
         try (BufferedReader reader = new BufferedReader(new FileReader(ARQUIVO))) {
 
             String linha;
-            System.out.println("\n===== HISTÓRICO (ARQUIVO) =====");
+            System.out.println("\n=====* HISTÓRICO *=====");
 
             while ((linha = reader.readLine()) != null) {
                 System.out.println(linha);
