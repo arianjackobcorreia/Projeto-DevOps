@@ -44,3 +44,10 @@ Para: Alice
 Acho que deu certo!
 Te encontro daqui à dois minutos
 -------------------------
+==== CARTA ====
+Titulo: Aviso!
+Para: Alan
+Algo precisa da sua atenção.
+Fique alerta.
+⚠️
+-------------------------
