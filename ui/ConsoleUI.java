@@ -1,6 +1,5 @@
 package ui;
 
-import factory.GeradorDeCarta;
 import model.Carta;
 import model.TiposCarta;
 import service.CartaService;
