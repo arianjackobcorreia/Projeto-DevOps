@@ -10,7 +10,7 @@ public enum TiposCarta {
     REFLEXAO(7, "Reflexão..."),
     PERSEVERANCA(8, "Perseverança!"),
     DESPEDIDA(9, "Despedida"),
-    POETICA(10, "Poética");
+    POETICA(10, "*Poética*");
 
     private int codigo;
     private String descricao;
