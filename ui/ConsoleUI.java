@@ -19,7 +19,7 @@ public class ConsoleUI {
 
     public void iniciar() {
 
-        System.out.println("===== CADASTRO =====");
+        System.out.println("=====* CADASTRO *=====");
         System.out.print("Digite seu nome (remetente): ");
         String nome = sc.nextLine();
 
@@ -56,7 +56,7 @@ public class ConsoleUI {
                     break;
 
                 case 0:
-                    System.out.println("\nObrigado por sua visita. Tchau! 👋");
+                    System.out.println("\nObrigado por usar os nossos serviços. Tchau!");
                     break;
 
                 default:
@@ -75,13 +75,13 @@ public class ConsoleUI {
             return;
         }
 
-        System.out.print("Deseja alterar o destinatário? (s/n): ");
+        System.out.print("Possui destinatário? (s/n): ");
         String escolha = sc.nextLine();
 
         String destinatario = remetente;
 
         if (escolha.equalsIgnoreCase("s")) {
-            System.out.print("Novo destinatário: ");
+            System.out.print("Digite o nome do destinatário: ");
             destinatario = sc.nextLine();
         }
 
@@ -115,7 +115,7 @@ public class ConsoleUI {
             case 4: cor = Cores.AMARELO; break;
         }
 
-        System.out.print("Deseja cancelar? (s/n): ");
+        System.out.print("Deseja cancelar a carta? (s/n): ");
         if (sc.nextLine().equalsIgnoreCase("s")) {
             System.out.println("Operação cancelada.");
             return;

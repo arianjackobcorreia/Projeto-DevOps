@@ -30,8 +30,8 @@ public class Carta {
         System.out.println(cor + "╔══════════════════════════════════════╗");
         System.out.printf("║ %-36s ║%n", titulo.toUpperCase());
         System.out.println("╠══════════════════════════════════════╣");
-        System.out.printf("║ De: %-33s ║%n", remetente);
-        System.out.printf("║ Para: %-30s ║%n", destinatario);
+        System.out.printf("║ De: %-36s ║%n", remetente);
+        System.out.printf("║ Para: %-36s ║%n", destinatario);
         System.out.println("╠══════════════════════════════════════╣");
 
         quebrarTexto(mensagem);

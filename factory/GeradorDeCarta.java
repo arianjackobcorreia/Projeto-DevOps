@@ -53,7 +53,7 @@ public class GeradorDeCarta {
             case PERSEVERANCA:
                 return new Carta("Perseverança", remetente,
                         destinatario,
-                        "Ninguém vai fazer por você.\nLevanta e faz.",
+                        "Ninguém vai fazer por você.\nNão desista!\nLevanta e faz.",
                         "🔥", cor);
 
             case DESPEDIDA:
